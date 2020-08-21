@@ -2,16 +2,18 @@ package com.jt.dubbo.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.jt.dubbo.mapper.UserMapper;
 import com.jt.dubbo.pojo.User;
+
+import javax.annotation.Resource;
+
 @Service(timeout=3000)	//3秒超时 内部实现了rpc
 //@org.springframework.stereotype.Service//将对象交给spring容器管理
 public class UserServiceImpl implements UserService {
 	
-	@Autowired
+	@Resource
 	private UserMapper userMapper;
 	
 	@Override

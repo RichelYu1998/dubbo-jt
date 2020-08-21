@@ -2,15 +2,17 @@ package com.jt.dubbo.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.jt.dubbo.mapper.UserMapper;
 import com.jt.dubbo.pojo.User;
-@Service(timeout=3000)	//3秒超时	
+
+import javax.annotation.Resource;
+
+@Service(timeout=3000)	//3秒超时
 public class UserServiceImpl implements UserService {
 	
-	@Autowired
+	@Resource
 	private UserMapper userMapper;
 	@Override
 	public List<User> findAll() {
